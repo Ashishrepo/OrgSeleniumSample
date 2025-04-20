@@ -8,16 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 @Listeners(ListnerClass.class)
-public class FailedScreenshots {
+public class FailedScreenshots_test {
 	
 public static WebDriver d;
 
 	@BeforeClass
 	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\z0044j3w\\Downloads\\chromedriver.exe");
+		System.out.println(System.getProperty("user.dir"));
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver d= new ChromeDriver();
 		
 	}
 

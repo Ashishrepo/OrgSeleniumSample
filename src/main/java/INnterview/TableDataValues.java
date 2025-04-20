@@ -3,6 +3,7 @@ package INnterview;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,9 +13,9 @@ public class TableDataValues {
 
 	public static void main(String[] args) {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\z0044j3w\\Downloads\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver d = new ChromeDriver();
 
-		WebDriver d = new ChromeDriver();
 		d.manage().window().maximize();
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
